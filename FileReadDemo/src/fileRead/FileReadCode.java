@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.HashMap;
+//import java.util.Map.Entry;
 
 public class FileReadCode {
 
@@ -36,6 +38,8 @@ public class FileReadCode {
 			e.printStackTrace();
 		}
 		
+		HashMap<String, Integer> measurements = new HashMap<String, Integer> ();
+		
 		// Now let's look at what we got from the file
 		for(String line: allLines) {
 			// Split current line into an array of elements
@@ -45,8 +49,13 @@ public class FileReadCode {
 			System.out.println("Element 1: " + splitString[0]);
 			System.out.println("Element 2: " + splitString[1]);
 			System.out.println();
+			
+			measurements.put(splitString[0], Integer.parseInt(splitString[1]));
 		}
 				
+		
+		// Variations using a HashMap
+		System.out.println(measurements.toString());
 	}
 	
 }
